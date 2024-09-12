@@ -17,13 +17,8 @@ export default function Home() {
   }, []);
 
   function createCategory(data) {
-    fetch("http://localhost:3000/api/category", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then(() => fetchCategory());
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE}/product`)
+.then(() => fetchCategory());
   }
 
   return (
